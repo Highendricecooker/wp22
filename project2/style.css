@@ -1,0 +1,79 @@
+body{font-family:"Times New Roman", Times, serif;}
+.div1{font-family:"Roboto", sans-serif;
+  width:10%;
+  margin-left:  5%;
+float:left;
+}
+.div2{font-family:"Times New Roman", Times, serif;
+  width:45%;
+  margin-left:  20%;
+  margin-right: 40%;
+  position: absolute;
+}
+.div3{font-family:"Times New Roman", Times, serif;
+  width:15%;
+  margin-left:  70%;
+  border:2px solid gray;
+  height:auto;
+  margin-top: 150px;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+}
+  .div4{font-family:"Times New Roman", Times, serif;
+  width:45%;
+  margin:  0;
+  border:2px solid gray;
+  padding:10px;
+}
+p{margin:10px;
+}
+table {
+  font-family: "Times New Roman", Times, serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th{
+border: 1px solid black;
+  text-align: center;
+  padding: 8px;
+}
+td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+.container{
+  display:flex;
+  border: 1px solid black;
+  flex-wrap: wrap;
+margin-bottom: 5%;
+}
+.container img{
+  height: 100px;
+}
+
+.gridcontainer{
+  display:grid;
+  padding: 2%;
+  grid-template-columns: auto auto;
+}
+
+.griditem{
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.div5{
+  margin-left: 70%;
+  margin-top: 100%;
+  position: absolute;
+
+}
+
+.container2 img{
+  height: 200px;
+}
