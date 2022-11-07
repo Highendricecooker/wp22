@@ -1,0 +1,37 @@
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+</head>
+<nav>
+		<ul>
+			<li><img src = "assets/Frame 1.png"><a href="index.html">home</a></li>
+			<li><img src = "assets/Frame 2.png"><a href="Profile.html">profile</a></li>
+			<li><img src = "assets/Frame 3.png"><a href="Map.html">map</a></li>
+			<li><img src = "assets/Frame 4.png"><a href="Info.html">info</a></li>
+		</ul>
+	</nav>
+
+<body>
+  <div class = "container">
+        <div class= "img" id = "panzoom">
+            <img src="assets/map zoom in hover.png" width="100%" height="100%">
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@panzoom/panzoom@4.5.0/dist/panzoom.min.js"></script>
+
+
+        <script>
+        const element = document.getElementById('panzoom');
+        const panzoom = Panzoom(element,{contain:'outside', onlyPanWhenZoomed:'true'});
+        const parent = element.parentElement;
+        parent.addEventListener('wheel', panzoom.zoomWithWheel);
+
+
+        </script>

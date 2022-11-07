@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+</head>
+
+
+<nav>
+		<ul>
+			<li><img src = "assets/Frame 1.png"><a href="index.html">home</a></li>
+			<li><img src = "assets/Frame 2.png"><a href="Profile.html">profile</a></li>
+			<li><img src = "assets/Frame 3.png"><a href="Map.html">map</a></li>
+			<li><img src = "assets/Frame 4.png"><a href="Info.html">info</a></li>
+		</ul>
+	</nav>
+
+
+<body onmousemove="setMousePosition()">
+
+	<div class="container" onmouseout="grabEnd()">
+		<div id="frame">
+				<img src="assets/Bench.png"
+				width=80px;
+				style="margin-left:49%;
+				margin-top:300px;"
+				border: 2px;>
+
+		</div>
+
+		<div class="tabs">
+				<div>
+					<button>key</button>
+					<button>custom</button>
+
+
+
+					<div class= "flexkey">
+
+								<div id="key" class="key">
+									<img src="assets/img1.png" onmousedown="addImg(1);playAudioAlt(1)">
+									<img src="assets/img2.png" onmousedown="addImg(2);playAudioAlt(2)">
+									<img src="assets/img3.png" onmousedown="addImg(3);playAudioAlt(3)">
+									<img src="assets/img4.png" onmousedown="addImg(4);playAudioAlt(4)">
+									<img src="assets/img5.png" onmousedown="addImg(5);playAudioAlt(5)">
+									<img src="assets/img6.png" onmousedown="addImg(6);playAudioAlt(6)">
+									<img src="assets/img7.png" onmousedown="addImg(7);playAudioAlt(7)">
+									<img src="assets/img8.png" onmousedown="addImg(8);playAudioAlt(8)">
+									<img src="assets/img9.png" onmousedown="addImg(9);playAudioAlt(9)">
+
+									<img src="assets/img10.png" onmousedown="addImg(10);playAudioAlt(10)">
+									<div class= "label">
+										<p></p>
+									<!-- <p>tree   two-footed animal</p> -->
+									</div>
+									<img src="assets/img11.png" onmousedown="addImg(11);playAudioAlt(11)">
+									<img src="assets/img12.png" onmousedown="addImg(12);playAudioAlt(12)">
+									<img src="assets/img13.png" onmousedown="addImg(13);playAudioAlt(13)">
+									<img src="assets/img14.png" onmousedown="addImg(14);playAudioAlt(14)">
+									<!-- <img src="assets/img15.png" onmousedown="addImg(15);playAudioAlt(15)"> -->
+									<img src="assets/img16.png" onmousedown="addImg(16);playAudioAlt(16)">
+
+
+									<!-- <img src="assets/img2.svg" onmousedown="addImg(2)">
+									<img src="assets/img3.svg" onmousedown="addImg(3)">
+									<img src="assets/img4.svg" onmousedown="addImg(4)">
+									<img src="assets/img5.svg" onmousedown="addImg(5)"> -->
+
+
+
+</div>
+
+				</div>
+		</div>
+
+
+<div class= "background">
+<!-- <button onclick="myFunction2()" class= "day">day</button> -->
+<button onclick="myFunction()" class= "night">day/night</button>
+
+</div>
+
+		<div class="location">
+
+				Providence River Greenway, 41.823578, -71.407790
+				<p id = "date-time"></p>
+				<p id = "date-day"></p>
+
+				<div class="button-container">
+			<button id = "upload">upload</button>
+
+				</div>
+
+		</div>
+
+
+	<script>
+		// Get the mouse coordinates to make the images draggable later on
+		let mouseX = 0;
+		let mouseY = 0;
+		function setMousePosition() {
+			let e = window.event;
+			mouseX = e.clientX;
+			mouseY = e.clientY;
+		}
+
+		let body = document.querySelector("body");
+		let imageNumber = 0; // This is the current image number
+		function addImg(key) {
+			// Add new image to document
+			body.innerHTML += `<img id="img${imageNumber}" class="image-draggable" src="assets/img${key}.png" onmousedown="grabStart(this);playAudio(this)" onmouseup="grabEnd()" data-imgid="${key}">`
+
+			img = document.querySelector("#img"+imageNumber);
+			img.style.left = (mouseX-20)+"px";
+			img.style.top = (mouseY-20)+"px";
+			grabStart(img);
+
+			// Increment image number so that the next image has a unique ID
+			imageNumber += 1;
+		}
+
+		// Start dragging
+		let dragState;
+		function grabStart(img) {
+			dragState = setInterval(function() {
+				img.style.left = (mouseX-20)+"px";
+				img.style.top = (mouseY-20)+"px";
+			}, 1);
+		}
+		// End dragging
+		function grabEnd() {
+			clearInterval(dragState);
+		}
+
+		//Date
+		var dt = new Date();
+    document.getElementById('date-time').innerHTML=dt;
+
+
+		function playAudioAlt(num) {
+			var audio = new Audio(`assets/audio${num}.mp3`);
+			audio.play();
+		}
+
+		function playAudio(img) {
+			let imgNumber = img.dataset.imgid;
+			console.log(imgNumber);
+			var audio = new Audio(`assets/audio${imgNumber}.mp3`);
+			audio.play();
+		}
+
+		function myFunction() {
+		  var element = document.getElementById('frame');
+			console.log(element);
+		  element.classList.toggle("dark-mode");
+		}
+
+		// function myFunction2() {
+		// 	var element = document.getElementById('frame');
+		// 	console.log(element);
+		// 	element.classList.toggle("dark-mode2");
+		// }
+
+	</script>
+
+
+
+</body>
+				</div>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+  .gridNew {
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); 
+  }
+p{
+  transition: 1s;
+}
+  </style>
+  </head>
+
+<body>
+    <div id="container" class="gridNew"></div>
+
+  <script>
+    let grid = document.querySelector("#container");
+
+let count=0;
+    while (count < 100) {
+      grid.innerHTML += "<p>hiiiiiiiiiiiiiiiii it is Saturday</p>";
+      count = count+1;
+      console.log("loop anything");
+    }
+console.log("it's over!");
+
+let all3= document.querySelectorAll("p");
+console.log(all3);
+
+setInterval(function () {
+  let loopNumber =0;
+  while (loopNumber < 100) {
+    all3[loopNumber].style.fontSize = (Math.random()*15)+"px";
+    // all3[loopNumber].style.transition = (Math.random()*15)+"px"
+    all3[loopNumber].style.letterspacing = (Math.random()*15)+"px";
+    let redNumber= Math.random()*255;
+    let greenNumber= Math.random()*255;
+    let blueNumber= Math.random()*255;
+    all3[loopNumber].style.color = `rgb(${redNumber}, ${greenNumber},${blueNumber})`
+    loopNumber = loopNumber +1;
+  }
+}, 1000);
+</script>
+</body>
+</html>

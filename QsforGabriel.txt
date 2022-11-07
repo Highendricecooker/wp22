@@ -1,0 +1,6 @@
+-Questions for Gabriel:
+
+- How to add icons next to the links on the head?
+- How to fix the pixely pngs?
+- How to do the click and paste pngs onto screen
+- How to drag div

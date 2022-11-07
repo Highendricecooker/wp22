@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -6,10 +6,210 @@
 	<title>Web Programming | STUDENT NAME | Final Project</title>
 </head>
 
-<body>
+<body> -->
 
 	<!-- Put your code here! -->
 
+<!-- </body>
+
+</html> -->
+<html lang="en">
+
+
+<head>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet" href="assets/style.css">
+
+		<style>
+
+    	.key img {
+				height: 50px;
+				cursor: grab;
+				user-drag: none;
+				-webkit-user-drag: none;
+				user-select: none;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+				-ms-user-select: none;
+			}
+
+			.image-draggable {
+				position: absolute;
+				height: 50px;
+				cursor: grab;
+				user-drag: none;
+				-webkit-user-drag: none;
+				user-select: none;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+				-ms-user-select: none;
+			}
+			.image-draggable:hover {
+				transform: scale(1.5);
+			}
+			.image-draggable:active {
+				cursor:grabbing;
+			}
+
+		</style>
+</head>
+
+<header>
+		<nav>
+        <ul>
+          <li><img src = "talking.png" style = "width:100px; height:100px;"><a href="index.html">Home</a></li>
+          <li><a href="Profile.html">Profile</a></li>
+          <li><a href="Map.html">Map</a></li>
+					<li><a href="Info.html">Info</a></li>
+				</ul>
+      </nav>
+</header>
+
+
+
+<body>
+	<!-- <div class="box">
+		<img src="bench.png"
+		width=80px;
+		style="margin-left:50%;
+		margin-top:500px;"
+		border: 2px;> -->
+	</div>
+
+	<body onmousemove="setMousePosition()">
+
+		<div class="container" onmouseout="grabEnd()">
+			<div id="frame"></div>
+			<div id="key" class="key">
+				<img src="tree.png" onmousedown="addImg(1)">
+				<img src="tree.gif" onmousedown="addImg(5)">
+				<img src="music.png" onmousedown="addImg(2)">
+				<img src="rain.png" onmousedown="addImg(3)">
+				<img src="siren.png" onmousedown="addImg(4)">
+			  <img src="running.png" onmousedown="addImg(6)">
+				<img src="walking.png" onmousedown="addImg(7)">
+				<img src="talking.png" onmousedown="addImg(8)">
+				<img src="water.png" onmousedown="addImg(9)">
+				<img src="wind.png" onmousedown="addImg(10)">
+				<img src="animal_2leg.png" onmousedown="addImg(11)">
+				<img src="animal_4leg.png" onmousedown="addImg(12)">
+				<img src="bike-scooter.png" onmousedown="addImg(13)">
+				<img src="bike-scooter1.png" onmousedown="addImg(14)">
+				<img src="boat.png" onmousedown="addImg(15)">\
+				<img src="car.png" onmousedown="addImg(16)">
+
+				<div class="flex-container">
+							<img src="tree.png" onclick="tree()">
+							<img src="music.png" onclick="music()">
+						</div>
+			</div>
+		</div>
+
+		<script>
+			// Get the mouse coordinates to make the images draggable later on
+			let mouseX = 0;
+			let mouseY = 0;
+			function setMousePosition() {
+				let e = window.event;
+				mouseX = e.clientX;
+				mouseY = e.clientY;
+			}
+
+			let body = document.querySelector("body");
+			let imageNumber = 0; // This is the current image number
+			function addImg(key) {
+				// Add new image to document
+				body.innerHTML += `<img id="im${imageNumber}" class="image-draggable" src="assets/img${key}.svg" onmousedown="grabStart(this)" onmouseup="grabEnd()">`
+
+				img = document.querySelector("#img"+imageNumber);
+				img.style.left = (mouseX-20)+"px";
+				img.style.top = (mouseY-20)+"px";
+				grabStart(img);
+
+				// Increment image number so that the next image has a unique ID
+				imageNumber += 1;
+			}
+
+			// Start dragging
+			let dragState;
+			function grabStart(img) {
+				dragState = setInterval(function() {
+					img.style.left = (mouseX-20)+"px";
+					img.style.top = (mouseY-20)+"px";
+				}, 1);
+			}
+			// End dragging
+			function grabEnd() {
+				clearInterval(dragState);
+			}
+		</script>
+
+
+
+<div class="tab">
+	<button class="tablinks" onclick="ope">
+	</div>
+
+<!-- <div class="flex-container">
+			<img src="tree.png" onclick="tree()">
+			<img src="music.png" onclick="music()"> -->
+			<!-- <img src="rain.png" onclick="rain()">
+			<img src="running.png" onclick="running()">
+			<img src="talking.png" onclick="talking()">
+			<img src="water.png" onclick="water()">
+			<img src="wind.png" onclick="wind()">
+			<img src="construction1.png" onclick="construction1()">
+			<img src="construction2.png" onclick="construction2()">
+			<img src="animal_2leg.png" onclick="animal_2leg()">
+			<img src="animal_4leg.png" onclick="animal_4leg()">
+			<img src="boat.png" onclick="boat()">
+			<img src="car.png" onclick="car()">
+			<img src="bike-scooter.png" onclick="bike-scooter()">
+			<img src="bike-scooter1.png" onclick="bike-scooter1()">
+			<img src="siren.png" onclick="siren()"> -->
+<!-- </div> -->
+
+<audio id="tree" src="tree.mp3"</audio>
+<audio id="music" src="let it be.mp3"</audio>
+<!-- <audio id="rain" src="let it be.mp3"</audio>
+<audio id="running" src="let it be.mp3"</audio>
+<audio id="talking" src="let it be.mp3"</audio>
+<audio id="water" src="let it be.mp3"</audio>
+<audio id="wind" src="let it be.mp3"</audio>
+<audio id="construction1" src="let it be.mp3"</audio>
+<audio id="construction2" src="let it be.mp3"</audio>
+<audio id="animal_2leg" src="let it be.mp3"</audio>
+<audio id="animal_4leg" src="let it be.mp3"</audio>
+<audio id="boat" src="let it be.mp3"</audio>
+<audio id="car" src="let it be.mp3"</audio>
+<audio id="bike-scooter" src="let it be.mp3"</audio>
+<audio id="bike-scooter1" src="let it be.mp3"</audio>
+<audio id="siren" src="let it be.mp3"</audio> --> -->
+
+// <!-- <div id="treediv">
+// 		<div id="treedivheader"></div> -->
+// 		<!-- <style>
+// 		.container {
+// 			width:100vw;
+// 			height:100vh;
+// 			}
+// 			.newClass1 {
+// 				background-color: blue;
+// 			}
+// 			</style>
+// 		</head>
+// 		<body>
+// 			<div class= "container">
+// 				<button onclick-"darkmode()"> hi there this is button</button>
+// 				<p>this is some text</p>
+// 			</div> -->
+
+
+	<script src="script.js"></script>
 </body>
 
 </html>

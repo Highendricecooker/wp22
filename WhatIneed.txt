@@ -1,0 +1,22 @@
+What I Need:
+
+Page 1:(Most Important)
+- Tabs for Key and Custom Keys
+- Make png clickable buttons
+- Png will randomly appear onto screen
+- png can be draggable 
+(I want to see what is needed for this, 
+I can ask my web programming teacher for javascript help)
+
+Page 2:
+- Scrollable page, images grey out when hover to reveal title
+
+Page 3:
+- Map, zoom in and drag function.
+
+Questions:
+- Is it hard to have all of these on one website page?
+- (Like how I have separate pages for each thing on my website)
+- I can decide how much work I want to do for this, 
+I can create little samples or just focus on part 1.
+I just need to make something that is interactive.

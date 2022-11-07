@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <style>
+  .random-class {
+    "100px";
+  }
+  </style> -->
+<head>
+  </head>
+  <body>
+    <div>
+      <p id="something1" onclick= "activateSecond()"">click me first</p>
+      <p id="something2">secret message</p>
+      <p id="something3">click me second!</p>
+      </div>
+
+<script>
+  let newVariable = 1;
+  let firstParagraph = document.querySelector
+  ("#something1");
+  let secondParagraph = document.querySelector
+  ("#something2");
+  let thirdParagraph = document.querySelector
+  ("#something3");
+
+function activateSecond()
+{
+  thirdParagraph.addEventListener("click", function() {
+    cutePuppies()
+  });
+}
+
+// }  firstParagraph.addEventListener("click", function() {
+//     cutePuppies();
+//   });
+
+function cutePuppies()
+{
+  if(newVariable >= 10) {
+
+  secondParagraph.innerText = "You're all great!";
+  secondParagraph.style.fontSize = "100px";
+  // secondParagraph.classList.toggle
+  // ("random-class");
+  // console.log("hello there!");
+}
+newVariable = newVariable +1;
+}
+  </script>
+  </body>
+  </html>
+<script src="script.js"></script>
